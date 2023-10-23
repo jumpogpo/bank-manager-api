@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/jumpogpo/bank-manager-api.git" target="blank"><img src="https://github.com/jumpogpo/bank-manager-api/blob/main/src/images/bank_logo.png?raw=true" width="200" height="200" alt="KPang Logo" /></a>
+  <a href="https://github.com/jumpogpo/bank-manager-api.git" target="blank"><img src="https://github.com/jumpogpo/bank-manager-api/blob/main/src/images/bank_logo.png?raw=true" width="300" height="200" alt="KPang Logo" /></a>
 </p>
 
 ## 👋 Description
