@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  bank-manager-api:
+    image: bank-manager-api
+    container_name: bank-manager-api
+    restart: always
+    ports:
+      - "2000:8000"
+    networks:
+      - mongodb-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.4.18
+    container_name: mongodb
+    restart: always
+    environment: 
+       MONGO_INITDB_ROOT_USERNAME: jumpogpo
+       MONGO_INITDB_ROOT_PASSWORD: superadmin
+    ports:
+      - "27017:27017"
+    volumes:
+      - db_data:/data/db
+      - db_config:/data/configdb
+    networks:
+      - mongodb-network
+
+volumes:
+  db_data:
+    name: mongodb-data
+    driver: local
+  db_config:
+    name: mongodb-config
+    driver: local
+
+networks:
+  mongodb-network:
+    name: mongodb_default
