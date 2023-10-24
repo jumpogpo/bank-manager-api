@@ -38,9 +38,9 @@ class BankManager:
         mongodb_port = os.environ.get('MONGODB_PORT', '27017')
 
         if not mongodb_user or not mongodb_pass:
-            auth_string = f"{mongodb_user}:{mongodb_pass}@"
-        else:
             auth_string = ""
+        else:
+            auth_string = f"{mongodb_user}:{mongodb_pass}@"
         
         self.client = MongoClient(f"mongodb://{auth_string}{mongodb_service_name}:{mongodb_port}/")
         self.db = self.client['bank']
