@@ -26,6 +26,21 @@ services:
     networks:
       - mongodb-network
 
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 2020:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: jumpogpo
+      ME_CONFIG_BASICAUTH_PASSWORD: superadmin
+      ME_CONFIG_MONGODB_URL: mongodb://jumpogpo:superadmin@mongodb:27017/
+    networks:
+      - mongodb-network
+    depends_on:
+      - mongodb
+
 volumes:
   db_data:
     name: mongodb-data
