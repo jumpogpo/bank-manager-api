@@ -1,6 +1,8 @@
-version: '3.8'
 services:
   bank-manager-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: bank-manager-api
     container_name: bank-manager-api
     restart: always
