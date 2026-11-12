@@ -283,18 +283,18 @@ class BankManager:
 
         # Transaction ID
         draw.text((35, 615), "เลขที่รายการ:", fill='black', font=small_font)
-        text_width, text_height = draw.textsize(transaction_id, small_font)
+        _, _, text_width, text_height = draw.textbbox((0, 0), transaction_id, font=small_font)
         draw.text((350 - text_width, 665), transaction_id, fill='black', font=small_font)
 
         # Amount
         amount_text = "{:,.2f} บาท".format(amount)
         draw.text((35, 710), "จำนวน:", fill='black', font=small_font)
-        text_width, text_height = draw.textsize(amount_text, small_font)
+        _, _, text_width, text_height = draw.textbbox((0, 0), amount_text, font=small_font)
         draw.text((350 - text_width, 760), amount_text, fill='black', font=small_font)
 
         # Charge
         draw.text((35, 800), "ค่าธรรมเนียม:", fill='black', font=small_font)
-        text_width, text_height = draw.textsize("0.00 บาท", small_font)
+        _, _, text_width, text_height = draw.textbbox((0, 0), "0.00 บาท", font=small_font)
         draw.text((350 - text_width, 850), "0.00 บาท", fill='black', font=small_font)
 
         # Scan QR Code
